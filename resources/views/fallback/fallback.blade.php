@@ -1,0 +1,1 @@
+<a href="{{ route('site.index') }}">Clique aqui para voltar para pagina inicial</a>
