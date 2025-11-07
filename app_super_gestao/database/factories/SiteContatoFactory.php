@@ -20,7 +20,7 @@ class SiteContatoFactory extends Factory
             "nome" => substr($this->faker->name(), 0, 50), // corta para 50 caracteres
             "telefone" => $this->faker->numerify('###########'), // 11 números
             "email" => substr($this->faker->unique()->safeEmail(), 0, 50), // corta para 50 caracteres
-            "motivo_contato" => $this->faker->numberBetween(1, 5),
+            "motivo_contatos_id" => $this->faker->numberBetween(1, 3),
             "mensagem" => substr($this->faker->text(200), 0, 100), // até 100 caracteres
         ];
     }
