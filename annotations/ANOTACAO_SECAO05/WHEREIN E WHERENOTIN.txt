@@ -1,0 +1,5 @@
+WHEREIN E WHERENOTIN
+
+$contatos = \App\Models\SiteContato::whereIn('campo_a_ser_comparado', 'conjunto_param');
+$contatos = \App\Models\SiteContato::whereIn('motivo_contato', [1, 3])->get();
+$contatos = \App\Models\SiteContato::whereNotIn('motivo_contato', [1, 3])->get();

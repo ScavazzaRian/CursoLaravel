@@ -1,0 +1,8 @@
+WHEREDATE
+
+Mesma coisa dos demais porém para datas na coluna do BD.
+
+WHEREMONTH
+WHEREYEAR
+WHEREDAY
+WHERETIME

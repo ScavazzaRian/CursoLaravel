@@ -1,0 +1,14 @@
+MANIPULANDO O OBJETO COLLECTION
+
+Digging depper -> Collections (doc laravel).
+
+Quando construímos a query é o objeto do tipo builder, depois do get() ele vira do tipo colletion.
+
+$contatos = \App\Models\SiteContato::where('id', '>', 3)->get();
+
+
+First: retorna o primeiro registro do array;
+
+Last: retorna o ultimo registro do array;
+
+Reverse: inverte o array;

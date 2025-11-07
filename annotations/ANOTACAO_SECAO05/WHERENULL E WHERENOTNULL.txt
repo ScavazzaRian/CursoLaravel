@@ -1,0 +1,3 @@
+WHERENULL E WHERENOTNULL
+
+Mesma coisa dos demais porém para os valores nulos na coluna do BD.

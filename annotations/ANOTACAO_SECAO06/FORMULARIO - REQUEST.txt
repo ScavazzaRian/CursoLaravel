@@ -1,0 +1,30 @@
+FORMULARIO - REQUEST
+
+//Primeiro jeito de pegar a informacao do formulario e salvar no banco.
+	$contato = new SiteContato();
+	$contato->nome = $request->input('nome');
+	$contato->telefone = $request->input('telefone');
+	$contato->email = $request->input('email');
+	$contato->motivo_contato = $request->input('motivo_contato');
+	$contato->mensagem = $request->input('mensagem');
+	$contato->save();
+
+//Segundo jeito -> necessario $fillable
+	$contato = SiteContato::create($request->all());
+	$contato = SiteContato::create($request->only(['nome', 'email']));
+	$titulo = 'Contato';
+	return view('site.contato', compact('titulo'));
+
+//Terceiro jeito -> manual
+	Contato::create([
+   	'nome' => $request->input('nome_completo'),
+    	'email' => $request->input('email_usuario'),
+]);
+
+OBS: sempre recomendado validar o formulário antes de fazer o envio, a fim de evitar erros
+
+$request->validate([
+        'nome' => 'required|string|max:255',
+        'email' => 'nullable|email',
+        'telefone' => 'nullable|string|max:20',
+]);

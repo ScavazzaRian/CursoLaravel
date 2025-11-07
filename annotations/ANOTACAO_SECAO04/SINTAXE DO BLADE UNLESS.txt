@@ -1,0 +1,8 @@
+SINTAXE DO BLADE UNLESS
+
+Alternativa para o operador de negação ! dentro do bloco if !<condição>
+
+
+@unless ($fornecedores[0]['status'] == 'S') {{-- Executa se a condiçao for false --}}
+    Fornecedor Inativo
+@endunless 

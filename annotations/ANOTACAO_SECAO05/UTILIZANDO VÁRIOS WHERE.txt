@@ -1,0 +1,4 @@
+UTILIZANDO VÁRIOS WHERE
+
+$contato = \App\Models\SiteContato::where('nome', '<>', 'Fernando')->whereIn('motivo contato', [1, 2])
+->whereBetween('created_at', ['2020-08-01 00:00:00', '2020-08-10 23:59:59'])->get();

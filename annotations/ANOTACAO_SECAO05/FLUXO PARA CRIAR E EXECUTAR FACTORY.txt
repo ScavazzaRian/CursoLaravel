@@ -1,0 +1,15 @@
+FLUXO PARA CRIAR E EXECUTAR FACTORY
+
+1 - php artisan make:factory <nome>Factory --model=<nome do model>
+2 - Array associativo com as colunas a serem preenchidas.
+	2.1 - Olhar o https://github.com/fzaninotto/faker
+	2.2 - Configurar o retorno através da sintaxe:
+		"nome" => $this->faker->name()
+3. Importar a seguinte linha
+	3.1 - use Illuminate\Database\Eloquent\Factories\HasFactory;
+	3.2 - adicionar ao model: use HasFactory;
+4. php artisan make:seeder <nome>Seeder
+5. Adicionar ao run():
+	5.1 - \App\Models\Fornecedor::factory()->count(100)->create();
+	OBS: deste modo criamos 100 registros no bd.
+6. php artisan db::seed --class=<nome da classe seeder>

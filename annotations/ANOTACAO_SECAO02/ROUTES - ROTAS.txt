@@ -1,0 +1,28 @@
+ROUTES - ROTAS
+
+O QUE SÃO ROTAS?
+
+minhaaplicacao.com.br
+minhaaplicacao.com.br/sobrenos
+minhaaplicacao.com.br/contato
+
+Essas são 3 rotas distintas configuradas de maneira distinta.
+
+ORGANIZACAO DE ROTAS NO LARAVEL
+
+API
+Channels
+Console
+Web
+
+COMO CRIAR ROTAS:
+
+Route::get('/contato', function(){
+    return "Contato (19) 99999-9999";
+});
+
+Route:get($uri, $callback (acao que ira acontecer quando acessar a uri))
+
+/* Verbos http
+
+get, post, put, delte, patch, options */

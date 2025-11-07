@@ -1,0 +1,9 @@
+FIND
+
+Ajuda a recuperar registros do banco de dados.
+
+$fornecedor = \App\Models\Fornecedor::find(<id>);
+$fornecedor = \App\Models\Fornecedor::find([<id>, <id2>]);
+
+
+Retorna um\o objeto.

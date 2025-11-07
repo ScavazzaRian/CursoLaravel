@@ -1,0 +1,13 @@
+TRATAR PARAMETROS ATRAVES DE EXPRESSAO REGULAR (REGEX)
+
+Route::get('contato/{nome}/{categoria_id}',
+    function (
+        string $nome = 'Desconheciado',
+        int $categoria_id = 1 // Representa categoria informação
+    ) {
+        echo "Estamos aqui: $nome - $categoria_id";
+    })->where('categoria_id', '[0-9]+');
+
+Aqui estamos configurando a rota.
+A categoria id precisa ter um número de 0 a 9, caso não tenha, irá retornar 404.
+Sem essa tratativa iria retornar um erro de PHP de tipagem

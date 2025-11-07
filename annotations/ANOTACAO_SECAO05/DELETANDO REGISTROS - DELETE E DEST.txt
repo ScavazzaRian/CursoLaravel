@@ -1,0 +1,7 @@
+DELETANDO REGISTROS - DELETE E DESTROY
+
+$contatos = \App\Models\SiteContato::find(4);
+$contatos->delete();
+$contatos = \App\Models\SiteContato::find(4)->delete();
+
+$contatos = \App\Models\SiteContato::destroy(5) //E possível encaminhar vários ids separados por virgula, também da pra encaminhar um array.

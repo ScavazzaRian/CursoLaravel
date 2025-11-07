@@ -1,0 +1,9 @@
+ARTISAN:
+
+Recurso de automatização do Laravel.
+Para saber todos os comandos do artisan teclamos: "php artisan list"
+
+SUBIR SERVIDOR:
+
+php artisan serve
+php artisan serve --port <9000>

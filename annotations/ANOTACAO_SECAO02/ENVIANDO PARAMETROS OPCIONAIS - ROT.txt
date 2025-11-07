@@ -1,0 +1,9 @@
+ENVIANDO PARAMETROS OPCIONAIS - ROTAS
+
+Para enviar um argumento opcional adicionamos o ?. Porém, é necessário deixar ele com um valor de exibição, exemplo:
+
+Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem?}', function(string $nome, string $categoria, string $assunto, string $mensagem = 'Mensagem não informada'){
+    echo 'Estamos aqui: '.$nome. ' - '.$categoria.' - '.$assunto.' - '.$mensagem;
+});
+
+Os argumentos opcionais devem ser da direita pra esquera -> mensagem - assunto - categoria - nome;

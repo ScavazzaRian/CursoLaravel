@@ -1,0 +1,8 @@
+FACTORIES
+
+Jeito de gerar dados para o seeders
+
+Criar a factory através de 
+
+php artisan make:factory --model=nome_model
+estrutrar ela com um array associativo do bd

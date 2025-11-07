@@ -1,0 +1,23 @@
+DICAS:
+
+php "echo ini_get('memory_limit);" -> Informa quanta memória está alocada.
+
+CONFIGURAÇAO GLOBAL PELO COMPOSER:
+
+composer config -g repo.packagist composer https://packagist.org -> Determinando uma config global para o composer.
+
+composer config -g github-protocols https ssh -> Configurando o composer para buscar por https
+
+CRIANDO UM PROJETO LARAVEL VIA COMPOSER:
+
+composer create-project --prefer-dist laravel/laravel <nome>
+
+CRIANDO UM PROJETO LARAVEL VIA LARAVEL INSTALLER:
+
+laravel new criando_arquivo_laravel_installer
+
+INICIANDO O SERVIDOR:
+
+php -S localhost:8000 -> Tem que estar dentro da public.
+php artisan serve
+php artisan serve --port=8080

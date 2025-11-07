@@ -1,0 +1,9 @@
+REDIRECIONANDO ROTA
+
+Nos arquivos do laravel
+
+ROTA DE CONTIGENCIA 
+
+Route::fallback(function(){
+    echo 'A rota acessada nao existe. <a href="'.route('site.index').'">Clique aqui para ir para a página inicial.</a>';
+});

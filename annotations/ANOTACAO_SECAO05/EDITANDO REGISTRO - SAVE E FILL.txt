@@ -1,0 +1,9 @@
+EDITANDO REGISTRO - SAVE E FILL
+
+$fornecedor = \App\Models\Fornecedor::find(2);
+
+Através do fill podemos alterar nosso objeto por um array associativo.
+
+$fornecedor->fill(['nome'=>'Logitech', 'uf'=>])
+
+OBS: para isso funcionar é necessário o atributo protected $fillable e seu array de atributos no models

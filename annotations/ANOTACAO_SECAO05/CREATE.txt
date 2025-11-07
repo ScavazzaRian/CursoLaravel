@@ -1,0 +1,3 @@
+CREATE
+
+Para usar esse métodos precisamos que os parâmetros passados no array estejam como fillable.

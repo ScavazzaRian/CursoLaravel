@@ -1,0 +1,36 @@
+DELETANDO REGISTROS - SOFTDELETE
+
+Ele adiciona uma coluna deleted_at, quando null não esta excluído.
+
+Trazemos o softdelete para o model
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Fornecedor extends Model
+{
+    use SoftDeletes;
+    
+    protected $table = "fornecedores";
+    protected $fillable = [
+        'nome',
+        'uf',
+        'email'
+    ];
+}
+
+Após a inserção do mesmo, ao executar o método delete a col delete_at será preenchida.
+
+Se de fato querer remover é necessário utilizar o forceDelete();
+
+TRAZENDO DE VOLTA
+
+$fornecedor->withTrashed()->get(); //Retorna todos, mesmo os 'excluidos'
+$fornecedor->onlyTrashed()->get(); //Retorna somente os 'excluidos'
+$fornecedor->restore(); // Retorna a coluna para null novamente.

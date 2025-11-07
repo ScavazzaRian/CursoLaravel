@@ -1,0 +1,5 @@
+NOMEANDO ROTAS
+
+Utilizamos o ->name('site.index');
+
+> Isso funciona somente dentro do escopo de programação e podemos referenciar ela em diversos lugares da aplicação.

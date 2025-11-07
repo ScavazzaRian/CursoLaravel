@@ -1,0 +1,20 @@
+$contatos = \App\Models\SiteContato::whereIn('nome', ['Jorge', 'Ana'])->get();
+$contatos = \App\Models\SiteContato::where(function($query) {
+    $query->where('nome', 'like', 'Jorge%')
+          ->orWhere('nome', 'like', 'Ana%');
+})->get();
+
+
+para consultas sobre (where1 ou 2) and (where3 ou 4);
+
+Fazemos:
+ 
+$contatos = \App\Models\SiteContato::where(function($query) {
+        $query->where('nome', '=', 'Jorge')
+              ->orWhere('nome', '=', 'Ana');
+    })
+    ->where(function($query) {
+        $query->whereIn('motivo_contato', [1, 2])
+              ->orWhereBetween('id', [4, 6]);
+    })
+    ->get();

@@ -1,0 +1,6 @@
+COMANDOS MIGRATE
+
+Status  -> "php artisan migrate:status"  -> Verifica os status da migrations
+Reset   -> "php artisan migrate:reset"   -> Reverte todas as migrations, executa o Down
+Refresh -> "php artisan migrate:refresh" -> Ele reverte todas as migrations e executa o migrate
+Fresh   -> "php artisan migrate:fresh"   -> Dropa o banco e realiza o migrate para recriar

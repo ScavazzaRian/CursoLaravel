@@ -1,0 +1,9 @@
+AGRUPANDO ROTAS
+
+Para agrupar um conjunto de rotas no Laravel, fazemos:
+
+Route::prefix(/app)->group(function(){
+	<todas as rotas agrupadas>
+}
+
+Tudo que estiver ai será acessado através de localhost:8000/app/rota

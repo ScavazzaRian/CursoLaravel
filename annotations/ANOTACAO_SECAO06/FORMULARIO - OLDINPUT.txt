@@ -1,0 +1,12 @@
+FORMULARIO - OLDINPUT
+
+Para recuperar info após erro de validação usamos o método old()
+Esse ajuste é feito no blade  utilizando o value = {{old('nome do name')}}
+
+<option value="1" {{ old('motivo_contato') == 1 ? 'selected' : ''}}>Dúvida</option>
+
+
+@foreach ($motivo_contatos as $key => $motivo_contato)
+    {{ $key }} - {{ $motivo_contato }}
+    {{ $key }} - {{ $motivo_contato->cpf }}
+@endforeach

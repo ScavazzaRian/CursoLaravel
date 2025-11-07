@@ -1,0 +1,12 @@
+ADICIONANDO CAMPOS APOS A MIGRATION
+
+1 - criamos uma nova migration
+
+php artisan make:migration alter_<nometabela>_<oq foi feito>
+
+Schema::table('fornecedores', function (Blueprint $table) {
+            $table->string('uf', 2);
+            $table->string('email', 50);
+});
+
+Por fim, trocamos o create para table, indicamos que vamos alterar a tabela.

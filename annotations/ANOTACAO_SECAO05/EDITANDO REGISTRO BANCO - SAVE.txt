@@ -1,0 +1,14 @@
+EDITANDO REGISTRO BANCO -> SAVE()
+
+Para editar um registro primeiro precisamos recupera-lo
+
+$fornecedor = \App\Models\Fornecedor::find(1)
+
+Após isso alteramos os atributos desse objeto, olhar com base nos campos da tabela.
+
+$fornecedor->nome = 'novo nome'
+...
+Após isso será possível constar através de "print_r($fornecedor->getAttributes());" que nosso objeto foi atualizado.
+Porem para surgir efeito na base de dados precisamos utilizar o método save, portanto:
+
+$fornecedor->save();

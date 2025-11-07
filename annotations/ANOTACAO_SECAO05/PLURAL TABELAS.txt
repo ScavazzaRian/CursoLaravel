@@ -1,0 +1,9 @@
+PLURAL TABELAS
+
+Quando tentamos usar o método save e o eloquent puxa a tabela errada, no Models do objeto passamos:
+
+protected $tablel = "fornecedores";
+
+Desse jeito setamos a tabela utilizada.
+
+Mais fácil deixar setado todas as tabelas usadas no model.

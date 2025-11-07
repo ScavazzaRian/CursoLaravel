@@ -1,0 +1,8 @@
+ELOQUENT 
+
+É o ORM do Laravel
+
+O Eloquent mapeia a base de dados e através dele podemos interagir com o banco pelo código.
+
+Save(), salvamos o objeto na base de dados.
+

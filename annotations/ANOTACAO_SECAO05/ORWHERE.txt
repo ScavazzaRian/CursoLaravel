@@ -1,0 +1,3 @@
+ORWHERE
+
+$contatos = \App\Models\SiteContato::where('nome', '<>', 'Fernanda')->orWhereIn('motivo_contato', [1, 2])->orWhereBetween('created_at', [data01, data02])->get();

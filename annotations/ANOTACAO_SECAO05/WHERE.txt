@@ -1,0 +1,8 @@
+WHERE
+
+$contatos = \App\Models\SiteContato::where('nome_col', 'operador_logico', 'valor')->get();
+$contatos = \App\Models\SiteContato::where('motivo_contato', '1')->get();
+$contatos = \App\Models\SiteContato::where('motivo_contato', '>=', '1')->where('motivo_contato', '<', '10')->get();
+$contatos = \App\Models\SiteContato::where('Nome', 'like', '%Jose')->get();
+
+Só retorna um objeto se tiver um get().

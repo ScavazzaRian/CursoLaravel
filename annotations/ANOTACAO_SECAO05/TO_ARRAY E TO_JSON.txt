@@ -1,0 +1,9 @@
+TO_ARRAY E TO_JSON
+
+$contatos = \App\Models\SiteContato::where('id', '>', 3)->get();
+
+toJson: $contatos->toJson();
+- Nossa coleção vira um objeto do tipo json.
+
+toArray: $contatos->toArray();
+- Nossa coleção vira um objeto do tipo array.

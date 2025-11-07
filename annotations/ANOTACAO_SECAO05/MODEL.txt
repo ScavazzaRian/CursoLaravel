@@ -1,0 +1,15 @@
+MODEL
+
+São classes que representam os objetos da nossa aplicação.
+
+php artisan make:model SiteContato -m
+
+Usamos "-m" para fazer a migration no banco de dados
+
+Para executar uma migrations após alteração fazemos:
+
+-> php arisan migrate 
+
+Para criar uma migration
+
+php artisan make:migration create_fornecedores_table

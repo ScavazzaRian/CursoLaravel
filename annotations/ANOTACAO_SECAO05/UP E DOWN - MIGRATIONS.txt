@@ -1,0 +1,18 @@
+UP E DOWN -> MIGRATIONS
+
+Tudo dentro do método UP é criado quando executado o comando "php artisan migrate"
+
+Tudo dentro do método DOWN é responsável por reverter tudo feito no UP. Sempre executar na migration criada.
+
+$table->dropCollumn('uf');
+$table->dropCollumn(['uf', 'email']);
+
+Da pra dropar a tabela, exemplo: 
+
+Schema::dropIfExists('fornecedores')
+Schema::drop('fornecedores')
+
+-- Usamos o rollback para voltar atras da ultimas migration
+
+	php artisan migrate:rollback
+	php artisan migrate:rollback --step=2 >> Indicamos quantas migrações vamos voltar

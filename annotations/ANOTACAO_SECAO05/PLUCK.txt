@@ -1,0 +1,9 @@
+PLUCK
+
+Permite recuperar todos os valores de uma determinada chave.
+
+$contatos->pluck('email');
+$contatos->pluck('email')->toArray();
+
+$contatos = \App\Models\SiteContato::all()->pluck('email', 'nome');
+						    value,  key	

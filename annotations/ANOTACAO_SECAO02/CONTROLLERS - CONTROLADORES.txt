@@ -1,0 +1,27 @@
+CONTROLLERS - CONTROLADORES
+
+O que são Controllers?
+
+São as ações que irá acontecer quando a rota acessar.
+
+Para utilizar controller criamos classes em CamelCase e sempre terminando com Controller.
+
+EXEMPLO:
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class ContatoController extends Controller
+{
+    public function Contato(){
+        echo 'Tel: (19) 99999-9999';
+    }
+}
+
+
+CONFIGURANDO ROTA E CHAMANDO A CLASSE:
+
+Route::get('/', [PrincipalController::class, 'Principal']);

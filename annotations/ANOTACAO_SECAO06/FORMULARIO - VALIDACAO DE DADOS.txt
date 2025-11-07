@@ -1,0 +1,17 @@
+FORM*ULARIO - VALIDACAO DE DADOS
+
+Antes de salvar é necessario validar. Fazemos isso através do recurso $errors
+
+$request->validate([
+            'nome' => 'required|min:3|max:50',
+            'telefone' => 'required',
+            'email' => 'required',
+            'motivo_contato' => 'required',
+            'mensagem' => 'required',
+]);
+
+Após isso:
+
+SiteContato::create($request->all());
+
+Na doc do laravel da pra achar todas as opções de validacao

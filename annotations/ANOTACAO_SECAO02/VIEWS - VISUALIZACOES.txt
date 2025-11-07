@@ -1,0 +1,5 @@
+VIEWS - VISUALIZACOES
+
+Aqui é carregado o HTML.
+
+resources -> views -> site.

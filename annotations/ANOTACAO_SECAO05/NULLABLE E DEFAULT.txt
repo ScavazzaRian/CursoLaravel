@@ -1,0 +1,4 @@
+NULLABLE E DEFAULT
+
+Nullable -> permite que atributos do banco sejam null.
+Default -> permite a inclusão de um valor padrão caso não seja passada nada.

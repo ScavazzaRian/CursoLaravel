@@ -1,0 +1,5 @@
+ALL
+
+Recupera todos os registros do banco:
+
+$fornecedores = \App\Models\Fornecedor::all();

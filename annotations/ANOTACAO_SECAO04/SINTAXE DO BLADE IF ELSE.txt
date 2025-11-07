@@ -1,0 +1,28 @@
+SINTAXE DO BLADE IF ELSE
+
+Material de apoio:
+
+<?php
+
+namespace App\Http\Controllers;
+
+class FornecedoresController extends Controller
+{
+    public function index(){
+        $fornecedores = ['Fornecedor 1'];
+        return view('app.fornecedor.index', compact('fornecedores'));
+    }
+}
+
+
+Sintaxe:
+
+<h1>Fornecedores</h1>
+
+@if (count($fornecedores) > 0 && count($fornecedores) < 10) 
+    <h3>Existem alguns fornecedores</h3>
+@elseif (count($fornecedores) > 10)
+    <h3>Existem vários fornecedores cadastrados</h3>
+@else
+    <h3>Nao existem fornecedores cadastrados</h3>
+@endif

@@ -1,0 +1,6 @@
+ORDENANDO REGISTROS
+
+$contatos = \App\Models\SiteContato::orderBy('nome', 'desc')->get();
+
+por padrão ele ordena asc.
+OBS: não é possível manipular o all do Laravel.

@@ -1,0 +1,8 @@
+SEEDERS
+
+São responsáveis por semear os bancos de dados da aplicao com dados de testes.
+São classes "sementes", responsáveis por popular a base de dados.
+
+Para executar um seeders
+
+php artisan db::seed

@@ -1,0 +1,4 @@
+EDITANDO REGISTROS - WHERE E UPDATE
+
+$fornecedores = \App\Models\Fornecedor::whereIn('id', [1, 2])->update(['nome'=>'Teste']);
+OBS: cuidado, ele executa isso no banco instantaneamente, 

@@ -1,0 +1,7 @@
+WHERECOLLUM
+
+$contatos = \App\Models\SiteContato::whereCollumn('created_at', 'updated_at')->get();
+$contatos = \App\Models\SiteContato::whereCollumn('created_at', 'updated_at')->get(); 
+Ele não compara valores null
+
+$contatos = \App\Models\SiteContato::whereCollumn('created_at', '<>', 'updated_at')->get();

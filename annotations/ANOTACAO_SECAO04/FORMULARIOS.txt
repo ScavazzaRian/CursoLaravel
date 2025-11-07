@@ -1,0 +1,4 @@
+FORMULARIOS
+
+ACTION -> Para qual rota o formulário será enviado.
+METHOD -> Qual verbo http será enviado.

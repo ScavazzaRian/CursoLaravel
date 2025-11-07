@@ -1,0 +1,4 @@
+WHEREBETWEEN E WHERENOTBETWEEN
+
+$contatos = \App\Models\SiteContato::whereBetween('motivo_contato', [1, 10])->get();
+$contatos = \App\Models\SiteContato::whereNotBetween('motivo_contato', [1, 10])->get();

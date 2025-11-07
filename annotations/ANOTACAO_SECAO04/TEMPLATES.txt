@@ -1,0 +1,17 @@
+TEMPLATES
+
+Criando elementos que serão repitidos na pagina html. Por exemplo uma sidebar.
+
+INCLUDE E EXTENDS
+
+✅ Diferença prática:
+
+@include → você usa quando só quer reaproveitar um pedacinho em várias views.
+
+@extends → você usa quando precisa de um esqueleto/base para todas as páginas.
+
+💡 Resumindo:
+
+Se o seu projeto for pequeno, usar só @include pode ser mais prático mesmo.
+
+Se for crescer, @extends ajuda a organizar melhor (porque cada página só preenche os @section, sem repetir estrutura).

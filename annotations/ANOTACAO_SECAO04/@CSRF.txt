@@ -1,0 +1,4 @@
+@CSRF
+
+Impedi a vulnerabilidade de requisição falsa;
+Quando usamos o token, e criado um token exclusivo para o envio do formulário.
