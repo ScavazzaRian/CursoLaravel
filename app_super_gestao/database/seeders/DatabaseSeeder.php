@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\MotivoContato;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // FornecedorSeeder::class,
             // SiteContatoSeeder::class,
-            UsuarioSeeder::class,
+            // UsuarioSeeder::class,
+            MotivoContatoSeeder::class,
         ]);
     }
 }
