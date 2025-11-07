@@ -26,11 +26,24 @@ class ContatoController extends Controller
 
         //Antes de salvar é necessario validar.
         $request->validate([
-            'nome' => 'required',
+            //Unique torna o campo unico, se tiver um nome no banco de Joao e outra pessoa tentar fazer o envio do formulario como Joao dara erro por conta do unique.
+            //Acho melhor usar isso no banco de dados, para garantir a persistencia no BD
+            'nome' => 'required|min:3|max:50|unique:site_contatos',
             'telefone' => 'required',
             'email' => 'email',
             'motivo_contatos_id' => 'required',
             'mensagem' => 'required|max:500',
+        ],
+        [
+            'nome.required'=>'O campo nome precisa ser preenchido',
+            'nome.unique'=>'Nome já cadastrado',
+            'telefone.required'=>'O telefone precisa ser preenchido',
+            'email.email'=>'Digite um email válido',
+            'motivo_contatos_id.required'=>'Selecione um motivo de contato',
+            'mensagem.required'=>'A mensagem precisa ser preenchida',
+
+            //Esse é o default para o required
+            'required'=>'O campo :attribute precisa ser preenchido',
         ]);
 
         //Segundo jeito -> necessario $fillable

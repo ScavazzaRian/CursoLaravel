@@ -10,12 +10,14 @@ use App\Http\Controllers\FornecedoresController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Middleware\LogAcessoMiddleware;
 use Illuminate\Support\Facades\Route;
 
 // Ao passar um string o laravel entende que estamos indicando um controlador e sua acao
-Route::get('/', [PrincipalController::class, 'Principal'])->name('site.index');
-Route::get('/sobrenos', [SobreNosController::class, 'SobreNos'])->name('site.sobrenos');
+Route::middleware(LogAcessoMiddleware::class)
+    ->get('/', [PrincipalController::class, 'Principal'])
+    ->name('site.index');
+Route::get('/sobrenos', [SobreNosController::class, 'SobreNos'])->name('site.sobrenos')->middleware(LogAcessoMiddleware::class);
 Route::get('/contato', [ContatoController::class, 'Contato'])->name('site.contato'); 
 Route::post('/contato', [ContatoController::class, 'Salvar'])->name('site.contato'); 
 Route::get('/login', [LoginController::class, ''])->name('site.login');
@@ -33,17 +35,10 @@ Route::fallback([FallbackController::class, 'fallback']);
 Route::get('/teste', [TesteController::class, 'teste'])->name('site.teste');
 
 //TESTE LOGIN
-Route::get('/login2', [AuthController::class, 'showLogin'])->name('teste.login');
-Route::post('/login2', [AuthController::class, 'login'])->name('teste.login.post');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::post('/contato', [ContatoController::class, 'Salvar'])->name('site.contato')->middleware('auth'); 
-
-
-
-
-
-
-
+// Route::get('/login2', [AuthController::class, 'showLogin'])->name('teste.login');
+// Route::post('/login2', [AuthController::class, 'login'])->name('teste.login.post');
+// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Route::post('/contato', [ContatoController::class, 'Salvar'])->name('site.contato')->middleware('auth'); 
 
 # TESTES 01 #
 // UTILIZANDO PARAMETROS E REGEX PARA TRATAR ROTAS
