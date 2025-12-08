@@ -17,6 +17,7 @@
                     {{ $errors->has('senha') ? $errors->first('senha') : '' }}
                     <button type="submit" class="borda-preta">Entrar</button>
                 </form>
+                {{ isset($erro) && $erro != '' ? $erro : '' }}
             </div>
         </div>
     </div>

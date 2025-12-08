@@ -24,7 +24,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('site.login');
 Route::post('/login', [LoginController::class, 'autenticar'])->name('site.login');
 
 //Divisao de rotas, para depois que o login for feito. Uma sendo pública a outra privada.
-Route::prefix('/app')->middleware('log.acesso', 'autenticacao')->group(function(){
+Route::prefix('/app')->middleware(['log.acesso', 'autenticacao'])->group(function(){
     Route::get('/fornecedores', [FornecedoresController::class, 'index'])->name('app.fornecedores.index');
     Route::get('/cliente', [ClienteController::class, 'cliente'])->name('app.clientes');
     Route::get('/produtos', [ProdutosController::class, 'produtos'])->name('app.produtos');
