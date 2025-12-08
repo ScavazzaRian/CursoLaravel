@@ -4,7 +4,7 @@ Este repositório contém o código-fonte do projeto "Super Gestão", desenvolvi
 
 ## 📚 Curso
 
-*   **Nome:** Desenvolvimento Web Completo 2022 (ou similar)
+*   **Nome:** Desenvolvimento Web Completo 2022
 *   **Instrutor:** Jorge Sant Ana
 *   **Plataforma:** Udemy
 
