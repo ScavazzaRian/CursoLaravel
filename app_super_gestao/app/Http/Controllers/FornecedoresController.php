@@ -6,21 +6,30 @@ use Illuminate\Http\Request;
 
 class FornecedoresController extends Controller
 {
-    public function index(){
-       return view('app.fornecedor.index');
+    public function index()
+    {
+        return view('app.fornecedor.index');
     }
 
-    public function listar(Request $request){
-        return view('app.fornecedor.listar');
+    public function listar(Request $request)
+    {
+        $fornecedores = Fornecedor::where('nome', 'like', '%' . $request->input('nome') . '%')
+            ->where('uf', 'like', '%' . $request->input('uf') . '%')
+            ->where('email', 'like', '%' . $request->input('email') . '%')
+            ->get();
+
+        return view('app.fornecedor.listar', compact('fornecedores'));
     }
 
-    public function cadastrarFornecedor(){
+    public function cadastrarFornecedor()
+    {
         return view('app.fornecedor.cadastro');
     }
 
-    public function adicionar(Request $request){
+    public function adicionar(Request $request)
+    {
         $mensagem = '';
-        
+
         $regras = [
             'nome' => 'required|min:3|max:40',
             'uf' => 'required|min:2|max:2',
@@ -28,11 +37,11 @@ class FornecedoresController extends Controller
         ];
 
         $feedback = [
-            'required'=> 'O campo :attribute deve ser preenchido',
-            'nome.min'=> 'O campo nome deve ter no minimo 2 caracteres',
-            'nome.max'=> 'O campo nome deve ter no maximo 40 caracteres',
-            'uf.min'=> 'O campo nome deve ter no minimo 2 caracteres',
-            'uf.max'=> 'O campo nome deve ter no maximo 2 caracteres',
+            'required' => 'O campo :attribute deve ser preenchido',
+            'nome.min' => 'O campo nome deve ter no minimo 2 caracteres',
+            'nome.max' => 'O campo nome deve ter no maximo 40 caracteres',
+            'uf.min' => 'O campo nome deve ter no minimo 2 caracteres',
+            'uf.max' => 'O campo nome deve ter no maximo 2 caracteres',
             'email' => 'Informe um email valido',
         ];
 
