@@ -55,14 +55,14 @@ class FornecedoresController extends Controller
     }
 
     public function editar(Fornecedor $fornecedor){
-        return view('app.fornecedor.cadastro', compact('fornecedor'));
+        return view('app.fornecedor.atualizar', compact('fornecedor'));
     }
 
     public function update(Request $request, Fornecedor $fornecedor){
         $validate = $request->validate([
             'nome' => 'required|min:3|max:40',
             'uf' => 'required|min:2|max:2',
-            'email' => 'required|email|uniqute',
+            'email' => 'required|email',
         ]);
 
         $fornecedor->update($validate);

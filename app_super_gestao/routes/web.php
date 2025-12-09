@@ -35,6 +35,7 @@ Route::prefix('/app')->middleware(['log.acesso', 'autenticacao'])->group(functio
     Route::get('/fornecedor/adicionar', [FornecedoresController::class, 'cadastrarFornecedor'])->name('app.fornecedor.adicionar');
     Route::post('/fornecedor/adicionar', [FornecedoresController::class, 'adicionar'])->name('app.fornecedor.adicionar.post');
     Route::get('/fornecedor/editar/{fornecedor}', [FornecedoresController::class, 'editar'])->name('app.fornecedor.editar');
+    Route::put('/fornecedor/editar/{fornecedor}', [FornecedoresController::class, 'update'])->name('app.fornecedor.update');
     Route::delete('/fornecedor/excluir/{id}', [FornecedoresController::class, 'excluir'])->name('app.fornecedor.excluir');
 
     Route::get('/produto', [ProdutosController::class, 'index'])->name('app.produto');
