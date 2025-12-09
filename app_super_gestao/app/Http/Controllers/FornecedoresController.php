@@ -53,4 +53,25 @@ class FornecedoresController extends Controller
 
         return view('app.fornecedor.cadastro', ['mensagem' => $mensagem]);
     }
+
+    public function editar(Fornecedor $fornecedor){
+        return view('app.fornecedor.cadastro', compact('fornecedor'));
+    }
+
+    public function update(Request $request, Fornecedor $fornecedor){
+        $validate = $request->validate([
+            'nome' => 'required|min:3|max:40',
+            'uf' => 'required|min:2|max:2',
+            'email' => 'required|email|uniqute',
+        ]);
+
+        $fornecedor->update($validate);
+
+        return redirect()->route('app.fornecedor');
+    }
+
+    public function excluir($id){
+        Fornecedor::destroy($id);
+        return redirect()->route('app.fornecedor')->with('success','');
+    }
 }

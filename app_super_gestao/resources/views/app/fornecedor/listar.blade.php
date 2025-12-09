@@ -10,8 +10,8 @@
 
         <div class="menu">
             <ul>
-                <li><a href="">Novo</a></li>
-                <li><a href="">Consulta</a></li>
+                <li><a href="{{ route('app.fornecedor.adicionar') }}">Novo</a></li>
+                <li><a href="{{ route('app.fornecedor') }}">Consulta</a></li>
             </ul>
         </div>
 
@@ -35,8 +35,14 @@
                                 <td>{{ $fornecedor->nome }}</td>
                                 <td>{{ $fornecedor->uf }}</td>
                                 <td>{{ $fornecedor->email }}</td>
-                                <td>Excluir</td>
-                                <td>Editar</td>
+                                <td>
+                                    <form action="{{ route('app.fornecedor.excluir', $fornecedor->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">Excluir</button>
+                                    </form>
+                                </td>
+                                <td><a href="{{ route('app.fornecedor.editar',  $fornecedor) }}">Editar</a></td>
                             </tr>
                         @endforeach
                     </tbody>
