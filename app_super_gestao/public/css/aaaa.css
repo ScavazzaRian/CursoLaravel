@@ -131,3 +131,13 @@
     padding: 3rem 2rem;
   }
 }
+
+.pagination li{
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.pagination ul{
+    list-style-type: none;
+}

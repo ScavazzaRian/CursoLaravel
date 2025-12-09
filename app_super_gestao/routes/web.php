@@ -31,6 +31,7 @@ Route::prefix('/app')->middleware(['log.acesso', 'autenticacao'])->group(functio
     Route::get('/cliente', [ClienteController::class, 'index'])->name('app.cliente');
 
     Route::get('/fornecedor', [FornecedoresController::class, 'index'])->name('app.fornecedor');
+    Route::get('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
     Route::post('/fornecedor/listar', [FornecedoresController::class, 'listar'])->name('app.fornecedor.listar');
     Route::get('/fornecedor/adicionar', [FornecedoresController::class, 'cadastrarFornecedor'])->name('app.fornecedor.adicionar');
     Route::post('/fornecedor/adicionar', [FornecedoresController::class, 'adicionar'])->name('app.fornecedor.adicionar.post');
@@ -45,6 +46,35 @@ Route::prefix('/app')->middleware(['log.acesso', 'autenticacao'])->group(functio
 Route::fallback([FallbackController::class, 'fallback']);
 
 Route::get('/teste', [TesteController::class, 'teste'])->name('site.teste');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //TESTE LOGIN
 // Route::get('/login2', [AuthController::class, 'showLogin'])->name('teste.login');

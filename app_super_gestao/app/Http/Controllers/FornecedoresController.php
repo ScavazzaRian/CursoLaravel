@@ -16,9 +16,9 @@ class FornecedoresController extends Controller
         $fornecedores = Fornecedor::where('nome', 'like', '%' . $request->input('nome') . '%')
             ->where('uf', 'like', '%' . $request->input('uf') . '%')
             ->where('email', 'like', '%' . $request->input('email') . '%')
-            ->get();
+            ->paginate(2);
 
-        return view('app.fornecedor.listar', compact('fornecedores'));
+        return view('app.fornecedor.listar', ['fornecedores' => $fornecedores, 'request' => $request->all()]);
     }
 
     public function cadastrarFornecedor()
