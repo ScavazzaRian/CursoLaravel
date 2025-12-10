@@ -8,7 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FallbackController;
 use App\Http\Controllers\FornecedoresController;
-use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\LogAcessoMiddleware;
@@ -39,7 +39,7 @@ Route::prefix('/app')->middleware(['log.acesso', 'autenticacao'])->group(functio
     Route::put('/fornecedor/editar/{fornecedor}', [FornecedoresController::class, 'update'])->name('app.fornecedor.update');
     Route::delete('/fornecedor/excluir/{id}', [FornecedoresController::class, 'excluir'])->name('app.fornecedor.excluir');
 
-    Route::get('/produto', [ProdutosController::class, 'index'])->name('app.produto');
+    Route::resource('produtos', ProdutoController::class);
 });
 
 //Criando uma rota de fallback
