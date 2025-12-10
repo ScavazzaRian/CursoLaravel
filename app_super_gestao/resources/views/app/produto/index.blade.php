@@ -10,7 +10,7 @@
 
         <div class="menu">
             <ul>
-                <li><a href="{{ route('produtos.create') }}">Novo</a></li>
+                <li><a href="">Novo</a></li>
                 <li><a href="">Consulta</a></li>
             </ul>
         </div>
@@ -28,6 +28,7 @@
                                 <th>Unidade Id</th>
                                 <th></th>
                                 <th></th>
+                                <th></th>
                             </tr>
                         </thead>
 
@@ -39,13 +40,14 @@
                                     <td>{{ $produto->peso }}</td>
                                     <td>{{ $produto->unidade_id }}</td>
                                     <td>
-                                        <form action="" method="POST">
+                                        <form action="{{ route('produtos.destroy', $produto->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit">Excluir</button>
                                         </form>
                                     </td>
-                                    <td><a href="">Editar</a></td>
+                                    <td><a href="{{ route('produtos.edit', $produto) }}">Editar</a></td>
+                                    <td><a href="{{ route('produtos.show', $produto) }}">Visualizar</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -50,7 +50,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        //
+        return view('app.produto.show', compact('produto'));
     }
 
     /**
@@ -58,7 +58,8 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        $unidades = Unidade::all();
+        return view('app.produto.edit', compact('produto', 'unidades'));
     }
 
     /**
@@ -66,7 +67,15 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        $validate=$request->validate([
+            'nome'=>'required',
+            'descricao'=>'required',
+            'peso'=>'required',
+            'unidade_id'=>'required',
+        ]);
+
+        $produto->update($validate);
+        return redirect()->route('produtos.index')->with('success');
     }
 
     /**
@@ -74,6 +83,7 @@ class ProdutoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Produto::destroy($id);
+        return redirect()->route('produtos.index')->with('success');
     }
 }
