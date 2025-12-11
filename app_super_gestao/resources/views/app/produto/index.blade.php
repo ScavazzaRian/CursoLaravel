@@ -26,6 +26,9 @@
                                 <th>Descricao</th>
                                 <th>Peso</th>
                                 <th>Unidade Id</th>
+                                <th>Comprimento</th>
+                                <th>Altura</th>
+                                <th>Largura</th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
@@ -39,6 +42,9 @@
                                     <td>{{ $produto->descricao }}</td>
                                     <td>{{ $produto->peso }}</td>
                                     <td>{{ $produto->unidade_id }}</td>
+                                    <td>{{ $produto->produtoDetalhe->comprimento ?? '' }}</td>
+                                    <td>{{ $produto->produtoDetalhe->altura ?? '' }}</td>
+                                    <td>{{ $produto->produtoDetalhe->largura ?? '' }}</td>
                                     <td>
                                         <form action="{{ route('produtos.destroy', $produto->id) }}" method="POST">
                                             @csrf

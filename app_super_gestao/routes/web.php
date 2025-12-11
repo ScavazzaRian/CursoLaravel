@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\ProdutoDetalheController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClienteController;
@@ -39,7 +40,10 @@ Route::prefix('/app')->middleware(['log.acesso', 'autenticacao'])->group(functio
     Route::put('/fornecedor/editar/{fornecedor}', [FornecedoresController::class, 'update'])->name('app.fornecedor.update');
     Route::delete('/fornecedor/excluir/{id}', [FornecedoresController::class, 'excluir'])->name('app.fornecedor.excluir');
 
+    //Produto
     Route::resource('produtos', ProdutoController::class);
+    //Produto detalhes
+    Route::resource('produto-detalhes', ProdutoDetalheController::class);
 });
 
 //Criando uma rota de fallback
